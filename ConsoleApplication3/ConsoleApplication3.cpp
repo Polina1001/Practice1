@@ -22,9 +22,6 @@ int main()
     int a = sizeof(int) * 8; // a = 32
     unsigned int mask = 1 << (a - 1); // 1000...00
 
-    int idz_output = mask - 1, idz_input, idz_counter = 0; // идз
-    idz_input = input; // идз
-
     for (int i = 1; i <= a; i++)
     {
         cout << (bool)(input & mask);
@@ -39,21 +36,6 @@ int main()
 
     // идз 2 (int)
     
-    /*for (int i = 1; i <= a; i++)
-    {
-        (idz_input & mask) ? idz_counter += 1 : idz_counter += 0;
-        idz_input <<= 1;
-    }
-    idz_output >>= 31 - idz_counter;
-
-    for (int i = 1; i <= a; i++)
-    {
-        cout << ((idz_output & mask) ? 1 : 0);
-        if (i == 1 || i % 8 == 0)
-            cout << " ";
-
-        idz_output <<= 1;
-    }*/
     input = ~input;
     mask = 1 << (a - 1);
     for (int i = 1; i <= a; i++)
